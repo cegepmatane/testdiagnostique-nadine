@@ -18,7 +18,8 @@ public class TestDiagnostique {
 	
 	public static void main(String[] args) 
 	{
-		VueConvertisseurArgent vue = new VueConvertisseurArgent();		
+		//VueConvertisseurArgent vue = new VueConvertisseurArgent();
+		ControleurConvertisseurArgent controleur = new ControleurConvertisseurArgent();
 	}
 
 }

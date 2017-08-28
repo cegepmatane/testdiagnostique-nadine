@@ -12,6 +12,9 @@ import javax.swing.JTextField;
 
 public class VueConvertisseurArgent extends JFrame 
 {
+	
+	private ControleurConvertisseurArgent controleur = null;
+	
 	private JLabel resultatConversion;
 	private JTextField montant;
 	private JComboBox selecteurDevises;
@@ -34,8 +37,10 @@ public class VueConvertisseurArgent extends JFrame
 		resultatConversion.setText("" + montantConverti);
 	}
 	
-	public VueConvertisseurArgent()
+	public VueConvertisseurArgent(ControleurConvertisseurArgent controleur)
 	{
+		this.controleur = controleur;
+		
 		this.setSize(100, 200);
 		JPanel panneauPrincipal = new JPanel();
 		panneauPrincipal.setLayout(new BoxLayout(panneauPrincipal, BoxLayout.Y_AXIS));
