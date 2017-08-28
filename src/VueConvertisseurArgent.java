@@ -13,7 +13,22 @@ import javax.swing.JTextField;
 public class VueConvertisseurArgent extends JFrame 
 {
 	private JLabel resultatConversion;
-
+	private JTextField montant;
+	private JComboBox selecteurDevises;
+	
+	public float getMontant()
+	{
+		String montantTexte = montant.getText();
+		//System.out.println(montantTexte);
+		//System.out.println(Float.parseFloat(montantTexte));
+		return Float.parseFloat(montantTexte);
+	}
+	
+	public String getDevise()
+	{
+		return (String)selecteurDevises.getSelectedItem();
+	}
+	
 	public VueConvertisseurArgent()
 	{
 		this.setSize(100, 200);
@@ -23,13 +38,13 @@ public class VueConvertisseurArgent extends JFrame
 		
 		// Créer et ajouter les composants graphiques
 		JLabel libelleMontant = new JLabel("Montant (CAD)");
-		JTextField montant = new JTextField(7);
+		montant = new JTextField(7);
 		
 		panneauPrincipal.add(libelleMontant);
 		panneauPrincipal.add(montant);
 		
 		String[] listeDevises = {"EUR","USD","BTC"};
-		JComboBox selecteurDevises = new JComboBox(listeDevises);
+		selecteurDevises = new JComboBox(listeDevises);
 		panneauPrincipal.add(selecteurDevises);
 		
 		JButton actionConvertirDevise = new JButton("====>>>");
@@ -39,12 +54,9 @@ public class VueConvertisseurArgent extends JFrame
 			{
 				public void mouseClicked(MouseEvent e)
 				{
-					String montantTexte = montant.getText();
-					//System.out.println(montantTexte);
-					float montant = Float.parseFloat(montantTexte);
-					//System.out.println(montant);
+					float montant = getMontant();
+					String devise = getDevise();
 					
-					String devise = (String)selecteurDevises.getSelectedItem();
 					//System.out.println(devise);
 					float montantConverti = 0;
 					if(devise.compareTo("USD") == 0) // usd == devise
@@ -65,7 +77,7 @@ public class VueConvertisseurArgent extends JFrame
 				}
 			});
 		
-		resultatConversion = new JLabel("");
+		resultatConversion = new JLabel("-");
 		resultatConversion.setOpaque(true);
 		resultatConversion.setBackground(Color.BLACK);
 		resultatConversion.setForeground(Color.WHITE);

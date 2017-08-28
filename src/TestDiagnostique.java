@@ -12,16 +12,13 @@ import javax.swing.JTextField;
 
 public class TestDiagnostique {
 	
-
 	static final float TAUX_CAD_VERS_EURO = (float) 0.671536431;
 	static final float TAUX_CAD_VERS_USD = (float) 0.801378;
 	static final float TAUX_CAD_VERS_BTC = (float) 0.00023;
 	
 	public static void main(String[] args) 
 	{
-		// Initialiser une fenetre
-		VueConvertisseurArgent vue = new VueConvertisseurArgent();	
-		
+		VueConvertisseurArgent vue = new VueConvertisseurArgent();		
 	}
 
 }
