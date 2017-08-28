@@ -1,4 +1,6 @@
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -33,6 +35,15 @@ public class TestDiagnostique {
 		
 		JButton actionConvertirDevise = new JButton("====>>>");
 		panneauPrincipal.add(actionConvertirDevise);
+		
+		actionConvertirDevise.addMouseListener(new MouseAdapter()
+			{
+				public void mouseClicked(MouseEvent e)
+				{
+					String montantTexte = montant.getText();
+					
+				}
+			});
 		
 		JLabel resultatConversion = new JLabel("test");
 		resultatConversion.setOpaque(true);
