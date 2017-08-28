@@ -11,6 +11,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class TestDiagnostique {
+	
+	static final float TAUX_CAD_VERS_EURO = (float) 0.671536431;
+	static final float TAUX_CAD_VERS_USD = (float) 0.801378;
+	static final float TAUX_CAD_VERS_BTC = (float) 0.00023;
 
 	public static void main(String[] args) 
 	{
@@ -41,6 +45,26 @@ public class TestDiagnostique {
 				public void mouseClicked(MouseEvent e)
 				{
 					String montantTexte = montant.getText();
+					//System.out.println(montantTexte);
+					float montant = Float.parseFloat(montantTexte);
+					//System.out.println(montant);
+					
+					String devise = (String)selecteurDevises.getSelectedItem();
+					//System.out.println(devise);
+					float montantConverti = 0;
+					if(devise.compareTo("USD") == 0) // usd == devise
+					{
+						montantConverti = montant * TestDiagnostique.TAUX_CAD_VERS_USD;
+					}
+					else if(devise.compareTo("EUR") == 0) // eur == devise
+					{
+						montantConverti = montant * TestDiagnostique.TAUX_CAD_VERS_EURO;						
+					}
+					else if(devise.compareTo("BTC") == 0) // btc == devise
+					{
+						montantConverti = montant * TestDiagnostique.TAUX_CAD_VERS_BTC;												
+					}
+					System.out.println("Le montant converti est " + montantConverti);
 					
 				}
 			});
