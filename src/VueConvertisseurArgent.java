@@ -64,25 +64,7 @@ public class VueConvertisseurArgent extends JFrame
 			{
 				public void mouseClicked(MouseEvent e)
 				{
-					float montant = getMontant();
-					String devise = getDevise();
-					
-					float montantConverti = 0;
-					if(devise.compareTo("USD") == 0) // usd == devise
-					{
-						montantConverti = montant * TestDiagnostique.TAUX_CAD_VERS_USD;
-					}
-					else if(devise.compareTo("EUR") == 0) // eur == devise
-					{
-						montantConverti = montant * TestDiagnostique.TAUX_CAD_VERS_EURO;						
-					}
-					else if(devise.compareTo("BTC") == 0) // btc == devise
-					{
-						montantConverti = montant * TestDiagnostique.TAUX_CAD_VERS_BTC;												
-					}
-					System.out.println("Le montant converti est " + montantConverti);
-				
-					afficherMontantConverti(montantConverti);
+					controleur.convertirDevise();
 				}
 			});
 		
