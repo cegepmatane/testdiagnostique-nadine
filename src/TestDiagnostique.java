@@ -15,6 +15,8 @@ public class TestDiagnostique {
 	static final float TAUX_CAD_VERS_EURO = (float) 0.671536431;
 	static final float TAUX_CAD_VERS_USD = (float) 0.801378;
 	static final float TAUX_CAD_VERS_BTC = (float) 0.00023;
+	
+	static JLabel resultatConversion;
 
 	public static void main(String[] args) 
 	{
@@ -66,10 +68,11 @@ public class TestDiagnostique {
 					}
 					System.out.println("Le montant converti est " + montantConverti);
 					
+					TestDiagnostique.resultatConversion.setText("" + montantConverti);
 				}
 			});
 		
-		JLabel resultatConversion = new JLabel("test");
+		resultatConversion = new JLabel("test");
 		resultatConversion.setOpaque(true);
 		resultatConversion.setBackground(Color.BLACK);
 		resultatConversion.setForeground(Color.WHITE);
