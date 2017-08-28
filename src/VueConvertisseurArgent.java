@@ -29,6 +29,11 @@ public class VueConvertisseurArgent extends JFrame
 		return (String)selecteurDevises.getSelectedItem();
 	}
 	
+	public void afficherMontantConverti(float montantConverti)
+	{
+		resultatConversion.setText("" + montantConverti);
+	}
+	
 	public VueConvertisseurArgent()
 	{
 		this.setSize(100, 200);
@@ -57,7 +62,6 @@ public class VueConvertisseurArgent extends JFrame
 					float montant = getMontant();
 					String devise = getDevise();
 					
-					//System.out.println(devise);
 					float montantConverti = 0;
 					if(devise.compareTo("USD") == 0) // usd == devise
 					{
@@ -72,8 +76,8 @@ public class VueConvertisseurArgent extends JFrame
 						montantConverti = montant * TestDiagnostique.TAUX_CAD_VERS_BTC;												
 					}
 					System.out.println("Le montant converti est " + montantConverti);
-					
-					resultatConversion.setText("" + montantConverti);
+				
+					afficherMontantConverti(montantConverti);
 				}
 			});
 		
