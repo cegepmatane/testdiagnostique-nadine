@@ -11,34 +11,18 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class VueConvertisseurArgent extends JFrame 
-{
-	
+{	
 	private ControleurConvertisseurArgent controleur = null;
 	
 	private JLabel resultatConversion;
-	private JTextField montant;
+	private JTextField champMontant;
 	private JComboBox selecteurDevises;
 	
-	public float getMontant()
-	{
-		String montantTexte = montant.getText();
-		//System.out.println(montantTexte);
-		//System.out.println(Float.parseFloat(montantTexte));
-		return Float.parseFloat(montantTexte);
-	}
+	private MontantArgent montant = null;
 	
-	public String getDevise()
+	public VueConvertisseurArgent(ControleurConvertisseurArgent controleur, MontantArgent montant)
 	{
-		return (String)selecteurDevises.getSelectedItem();
-	}
-	
-	public void afficherMontantConverti(float montantConverti)
-	{
-		resultatConversion.setText("" + montantConverti);
-	}
-	
-	public VueConvertisseurArgent(ControleurConvertisseurArgent controleur)
-	{
+		this.montant = montant;
 		this.controleur = controleur;
 		
 		this.setSize(100, 200);
@@ -48,10 +32,10 @@ public class VueConvertisseurArgent extends JFrame
 		
 		// Créer et ajouter les composants graphiques
 		JLabel libelleMontant = new JLabel("Montant (CAD)");
-		montant = new JTextField(7);
+		champMontant = new JTextField(7);
 		
 		panneauPrincipal.add(libelleMontant);
-		panneauPrincipal.add(montant);
+		panneauPrincipal.add(champMontant);
 		
 		String[] listeDevises = {"EUR","USD","BTC"};
 		selecteurDevises = new JComboBox(listeDevises);
@@ -78,5 +62,28 @@ public class VueConvertisseurArgent extends JFrame
 		this.setVisible(true);
 
 	}
+	
+	
+	public MontantArgent getMontant()
+	{
+		String montantTexte = champMontant.getText();
+		//System.out.println(montantTexte);
+		//System.out.println(Float.parseFloat(montantTexte));
+		float valeur =  Float.parseFloat(montantTexte);
+		this.montant.setMontant(valeur);
+		
+		return this.montant;
+	}
+	
+	public String getDevise()
+	{
+		return (String)selecteurDevises.getSelectedItem();
+	}
+	
+	public void afficherMontantConverti(float montantConverti)
+	{
+		resultatConversion.setText("" + montantConverti);
+	}
+	
 
 }
