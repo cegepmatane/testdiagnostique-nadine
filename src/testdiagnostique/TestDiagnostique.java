@@ -1,3 +1,4 @@
+package testdiagnostique;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -10,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import action.ControleurConvertisseurArgent;
+import testdiagnostique.action.ControleurConvertisseurArgent;
 
 public class TestDiagnostique {
 		

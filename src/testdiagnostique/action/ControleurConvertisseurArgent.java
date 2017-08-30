@@ -1,6 +1,6 @@
-package action;
-import modele.MontantArgent;
-import vue.VueConvertisseurArgent;
+package testdiagnostique.action;
+import testdiagnostique.modele.MontantArgent;
+import testdiagnostique.vue.VueConvertisseurArgent;
 
 public class ControleurConvertisseurArgent 
 {

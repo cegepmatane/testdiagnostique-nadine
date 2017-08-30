@@ -1,4 +1,4 @@
-package modele;
+package testdiagnostique.modele;
 
 public class MontantArgent {
 	
