@@ -1,6 +1,13 @@
+package action;
+import modele.MontantArgent;
+import vue.VueConvertisseurArgent;
 
 public class ControleurConvertisseurArgent 
 {
+	static final float TAUX_CAD_VERS_EURO = (float) 0.671536431;
+	static final float TAUX_CAD_VERS_USD = (float) 0.801378;
+	static final float TAUX_CAD_VERS_BTC = (float) 0.00023;
+
 	private VueConvertisseurArgent vue = null;
 	private MontantArgent montantArgent = null;
 	
@@ -22,15 +29,15 @@ public class ControleurConvertisseurArgent
 		float montantConverti = 0;
 		if(devise.compareTo("USD") == 0) // usd == devise
 		{
-			montantConverti = montantArgent.getMontantOriginal() * TestDiagnostique.TAUX_CAD_VERS_USD;
+			montantConverti = montantArgent.getMontantOriginal() * TAUX_CAD_VERS_USD;
 		}
 		else if(devise.compareTo("EUR") == 0) // eur == devise
 		{
-			montantConverti = montantArgent.getMontantOriginal() * TestDiagnostique.TAUX_CAD_VERS_EURO;						
+			montantConverti = montantArgent.getMontantOriginal() * TAUX_CAD_VERS_EURO;						
 		}
 		else if(devise.compareTo("BTC") == 0) // btc == devise
 		{
-			montantConverti = montantArgent.getMontantOriginal() * TestDiagnostique.TAUX_CAD_VERS_BTC;												
+			montantConverti = montantArgent.getMontantOriginal() * TAUX_CAD_VERS_BTC;												
 		}
 		System.out.println("Le montant converti est " + montantConverti);
 		

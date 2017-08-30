@@ -10,15 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import action.ControleurConvertisseurArgent;
+
 public class TestDiagnostique {
-	
-	static final float TAUX_CAD_VERS_EURO = (float) 0.671536431;
-	static final float TAUX_CAD_VERS_USD = (float) 0.801378;
-	static final float TAUX_CAD_VERS_BTC = (float) 0.00023;
-	
+		
 	public static void main(String[] args) 
 	{
-		//VueConvertisseurArgent vue = new VueConvertisseurArgent();
 		ControleurConvertisseurArgent controleur = new ControleurConvertisseurArgent();
 	}
 
