@@ -17,12 +17,9 @@ public class VueConvertisseurArgent extends JFrame
 	private JLabel resultatConversion;
 	private JTextField champMontant;
 	private JComboBox selecteurDevises;
-	
-	private MontantArgent montant = null;
-	
-	public VueConvertisseurArgent(ControleurConvertisseurArgent controleur, MontantArgent montant)
+		
+	public VueConvertisseurArgent(ControleurConvertisseurArgent controleur)
 	{
-		this.montant = montant;
 		this.controleur = controleur;
 		
 		this.setSize(100, 200);
@@ -70,9 +67,11 @@ public class VueConvertisseurArgent extends JFrame
 		//System.out.println(montantTexte);
 		//System.out.println(Float.parseFloat(montantTexte));
 		float valeur =  Float.parseFloat(montantTexte);
-		this.montant.setMontantOriginal(valeur);
 		
-		return this.montant;
+		MontantArgent montantArgent = new MontantArgent();
+		montantArgent.setMontantOriginal(valeur);
+		
+		return montantArgent;
 	}
 	
 	public String getDevise()

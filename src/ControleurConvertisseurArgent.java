@@ -7,7 +7,7 @@ public class ControleurConvertisseurArgent
 	public ControleurConvertisseurArgent()
 	{
 		montant = new MontantArgent();
-		vue = new VueConvertisseurArgent(this, montant);
+		vue = new VueConvertisseurArgent(this);
 		// new Vue(instanceControleur, instanceModele)
 	}
 	
