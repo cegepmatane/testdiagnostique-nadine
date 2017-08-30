@@ -70,7 +70,7 @@ public class VueConvertisseurArgent extends JFrame
 		//System.out.println(montantTexte);
 		//System.out.println(Float.parseFloat(montantTexte));
 		float valeur =  Float.parseFloat(montantTexte);
-		this.montant.setMontant(valeur);
+		this.montant.setMontantOriginal(valeur);
 		
 		return this.montant;
 	}
@@ -80,9 +80,9 @@ public class VueConvertisseurArgent extends JFrame
 		return (String)selecteurDevises.getSelectedItem();
 	}
 	
-	public void afficherMontantConverti(float montantConverti)
+	public void afficherMontantConverti(MontantArgent montant)
 	{
-		resultatConversion.setText("" + montantConverti);
+		resultatConversion.setText("" + montant.getMontantConverti());
 	}
 	
 
